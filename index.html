@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>whisper.cc</title>
+<style>
+    /* Global Styles */
+    body {
+        margin: 0;
+        font-family: 'Courier New', monospace;
+        background: #000;
+        color: #ff0000;
+        overflow-x: hidden;
+    }
+
+    /* Moving site name */
+    #site-name {
+        position: absolute;
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ff0000;
+        animation: moveName 8s infinite alternate;
+        user-select: none;
+    }
+
+    @keyframes moveName {
+        0% { top: 10px; left: 10px; }
+        25% { top: 50px; left: 80%; }
+        50% { top: 80%; left: 20%; }
+        75% { top: 60%; left: 60%; }
+        100% { top: 10px; left: 10px; }
+    }
+
+    /* Navigation */
+    nav {
+        background: #110000;
+        padding: 1rem;
+        display: flex;
+        gap: 2rem;
+    }
+
+    nav a {
+        color: #ff4d4d;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    nav a:hover {
+        color: #ff9999;
+    }
+
+    /* Page container */
+    .container {
+        padding: 2rem;
+    }
+
+    /* Text box style */
+    #main-textbox {
+        width: 80%;
+        padding: 1rem;
+        font-size: 1rem;
+        background: #220000;
+        border: 1px solid #ff0000;
+        color: #fff;
+        display: block;
+        margin: 2rem auto;
+    }
+
+    /* ASCII logo animation */
+    #ascii-logo {
+        white-space: pre;
+        font-family: monospace;
+        font-size: 0.8rem;
+        text-align: center;
+        animation: floatLogo 5s infinite alternate;
+        margin: 2rem auto;
+        line-height: 1.1rem;
+    }
+
+    @keyframes floatLogo {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* Footer */
+    footer {
+        text-align: center;
+        margin-top: 2rem;
+        color: #ff4d4d;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="site-name">whisper.cc</div>
+
+<nav>
+    <a href="#home" onclick="showPage('home')">Home</a>
+    <a href="#owners" onclick="showPage('owners')">Owners</a>
+    <a href="#hoa" onclick="showPage('hoa')">HOA</a>
+</nav>
+
+<div class="container">
+    <div id="home" class="page">
+        <h1>Welcome to whisper.cc</h1>
+        <textarea id="main-textbox" placeholder="Type something here..."></textarea>
+        <div id="ascii-logo">
+⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡄
+⢻⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠤⠤⠴⢶⣶⡶⠶⠤⠤⢤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⠁
+⠻⣯⡗⢶⣶⣶⣶⣶⢶⣤⣄⣀⣀⡤⠒⠋⠁⠀⠀⣀⠀⠚⢿⠟⠂⠀⠄⡀⠀⡉⠙⠳⣥⣠⡴⠖⣲⣶⡶⣶⣿⡟⢩⡴⠃⠀
+⠀⠀⠈⠻⠾⣿⣿⣬⣿⣾⡏⢹⣏⠉⠣⣌⣀⣁⠥⠜⠓⠊⠉⠉⠉⠉⠑⠒⠀⠤⣀⡠⠛⠉⣹⣧⣝⣿⣿⣷⠿⠿⠛⠉⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⣹⠟⠛⠿⣿⣤⡀⣸⠿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠾⣇⢰⣶⣿⠟⠋⠉⠳⡄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢠⡞⠁⠀⠀⡠⢾⣿⣿⣯⠀⠈⢧⡀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠁⢀⣿⣿⣯⢼⠓⢄⠀⢀⡘⣦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣰⣟⣟⣿⣀⠎⠀⠀⢳⠘⣿⣷⡀⢸⣿⣶⣤⣄⣀⣤⢤⣶⣿⡇⢀⣾⣿⠋⢀⡎⠀⠀⠱⣤⢿⠿⢷⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⣰⠋⠀⠘⣡⠃⠀⠀⠀⠈⢇⢹⣿⣿⡾⣿⣻⣖⠛⠉⠁⣠⠏⣿⡿⣿⣿⡏⠀⡼⠀⠀⠀⠀⠘⢆⠀⠀⢹⡄⠀⠀⢠
+⠀⠀⠀⠀⢰⠇⠀⠀⣰⠃⠀⠀⣀⣀⣀⣼⢿⣿⡏⡰⠋⠉⢻⠳⣤⠞⡟⠀⠈⢣⡘⣿⡿⠶⡧⠤⠄⣀⣀⠀⠈⢆⠀⠀⢳⠀⢀⠂
+⠀⠀⠀⠀⡟⠀⠀⢠⣧⣴⣊⣩⢔⣠⠞⢁⣾⡿⢹⣷⠋⠀⣸⡞⠉⢹⣧⡀⠐⢃⢡⢹⣿⣆⠈⠢⣔⣦⣬⣽⣶⣼⣄⠀⠈⣇⠄⠂
+⠀⠀⠀⢸⠃⠀⠘⡿⢿⣿⣿⣿⣛⣳⣶⣿⡟⣵⠸⣿⢠⡾⠥⢿⡤⣼⠶⠿⡶⢺⡟⣸⢹⣿⣿⣾⣯⢭⣽⣿⠿⠛⠏⠀⠀⢹⠄⠄
+⠀⠀⠀⢸⠀⠀⠀⡇⠀⠈⠙⠻⠿⣿⣿⣿⣇⣸⣧⣿⣦⡀⠀⣘⣷⠇⠀⠄⣠⣾⣿⣯⣜⣿⣿⡿⠿⠛⠉⠀⠀⠀⢸⠀⠀⢸⡆⠀
+⠀⠀⠀⢸⠀⠀⠀⡇⠀⠀⠀⠀⣀⠼⠋⢹⣿⣿⣿⡿⣿⣿⣧⡴⠛⠀⢴⣿⢿⡟⣿⣿⣿⣿⠀⠙⠲⢤⡀⠀⠀⠀⢸⡀⠀⢺⡏⠀
+⠀⠀⠀⢸⣀⣷⣾⣇⠀⣠⠴⠋⠁⠀⠀⣿⣿⡛⣿⡇⢻⡿⢟⠁⠀⠀⢸⠿⣼⡃⣿⣿⣿⡿⣇⣀⣀⣀⣉⣓⣦⣀⣸⣿⣿⣼⠉⠀
+⠀⠀⠀⠸⡏⠙⠁⢹⠋⠉⠉⠉⠉⠉⠙⢿⣿⣅⠀⢿⡿⠦⠀⠁⠀⢰⡃⠰⠺⣿⠏⢀⣽⣿⡟⠉⠉⠉⠀⠈⠁⢈⡇⠈⠇⣼⠀⠀
+⠀⠀⠀⠀⢳⠀⠀⠀⢧⠀⠀⠀⠀⠀⠀⠈⢿⣿⣷⣌⠧⡀⢲⠄⠀⠀⢴⠃⢠⢋⣴⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⡸⠀⠀⢠⠇⠁⠀
+⠀⠀⠀⠀⠈⢧⠀⠀⠈⢦⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣧⠐⠸⡄⢠⠀⢸⠀⢠⣿⣟⡿⠋⠀⠀⠀⠀⠀⠀⠀⡰⠁⠀⢀⡟⠠⠀⠀
+⠀⠀⠀⠀⠀⠈⢧⠀⠀⠀⠣⡀⠀⠀⠀⠀⠀⠀⠈⠛⢿⡇⢰⠁⠸⠄⢸⠀⣾⠟⠉⠀⠀⠀⠀⠀⠀⠀⢀⠜⠁⠀⢀⡞⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⢧⡀⠀⠀⠙⢄⠀⠀⠀⠀⠀⠀⠀⢨⡷⣜⠀⠀⠀⠘⣆⢻⠀⠀⠀⠀⠀⠀⠀⠀⡴⠋⠀⠀⣠⠎⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠑⢄⠀⠀⠀⠑⠦⣀⠀⠀⠀⠀⠈⣷⣿⣦⣤⣤⣾⣿⢾⠀⠀⠀⠀⠀⣀⠴⠋⠀⠀⢀⡴⠃⠀⠠⠐⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⢄⡀⢸⣶⣿⡑⠂⠤⣀⡀⠱⣉⠻⣏⣹⠛⣡⠏⢀⣀⠤⠔⢺⡧⣆⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠳⢽⡁⠀⠀⠀⠀⠈⠉⠙⣿⠿⢿⢿⠍⠉⠀⠀⠀⠀⠉⣻⡯⠛⠁⠀⠀⠀⠀⠀⠀⠆⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠑⠲⠤⣀⣀⡀⠀⠈⣽⡟⣼⠀⣀⣀⣠⠤⠒⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⢻⡏⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+        </div>
+    </div>
+
+    <div id="owners" class="page" style="display:none;">
+        <h1>Owners</h1>
+        <p>NetGov</p>
+        <p>NetGov Jr</p>
+    </div>
+
+    <div id="hoa" class="page" style="display:none;">
+        <h1>HOA</h1>
+        <p>JJ LLjsVR</p>
+        <p>Brother is a skid</p>
+    </div>
+</div>
+
+<footer>
+    &copy; 2025 whisper.cc | Red & Black Theme
+</footer>
+
+<script>
+    function showPage(pageId) {
+        document.querySelectorAll('.page').forEach(p => p.style.display = 'none');
+        document.getElementById(pageId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
